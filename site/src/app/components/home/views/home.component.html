@@ -1,0 +1,45 @@
+<div class="row root">
+    <div class="col-xs-3">
+        <input
+            type="text"
+            placeholder="Username"
+            class="form-control"
+            [(ngModel)]="username"
+        />
+    </div>
+    <div class="col-xs-3">
+        <input
+            type="password"
+            placeholder="Password"
+            class="form-control"
+            [(ngModel)]="password"
+        />
+    </div>
+    <div class="col-xs-2">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" [checked]="refresh" (change)="refresh = !refresh"> Refresh
+            </label>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <button
+            class="btn btn-primary"
+            (click)="search()"
+        >Submit</button>
+    </div>
+</div>
+<br/>
+
+<div class="alert alert-warning">
+    <strong>Warning!</strong> Don't unfollow too quickly. Leave 15-25 seconds between unfollows. If the unfollow button (on IG) doesn't 'load' (shows a loading icon) after you clicked it, IG is only pretending to have unfollowed. Refresh the IG page to see if you successfully unfollowed.
+</div>
+
+<br/>
+
+<user-table
+    *ngIf="users"
+    [username]="username"
+    [password]="password"
+    [users]="users"
+></user-table>

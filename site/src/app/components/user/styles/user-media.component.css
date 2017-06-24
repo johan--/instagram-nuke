@@ -1,0 +1,26 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container .time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 1px;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.image-container:hover .time {
+    opacity: 0;
+}

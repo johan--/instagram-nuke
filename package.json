@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "instagram-private-api": "^0.5.16"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "fs-extra": "^3.0.1",
+    "instagram-private-api": "^0.5.16",
+    "jsonfile-promised": "0.0.1"
   }
 }

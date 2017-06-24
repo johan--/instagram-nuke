@@ -1,0 +1,24 @@
+.profilepic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.profile {
+    text-align: center;
+    min-width: 150px;
+}
+
+.select-user {
+    padding: 20px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.select-user.success {
+    color: #5cb85c;
+}
+.select-user .fa-stack .fa-check {
+    font-size: 1.2em;
+}
+.hidden {
+    opacity: 0;
+}

@@ -1,0 +1,68 @@
+<div class="selection">
+    <div class="form-group selectedCount inline">
+        <div class="input-group">
+            <div class="input-group-addon">Number of users selected:</div>
+            <input type="text" class="form-control" disabled="disabled" [value]="getSelected().length">
+        </div>
+    </div>
+    <button
+        class="btn btn-danger inline"
+        (click)="unfollow()"
+    >Unfollow</button>
+</div>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous" (click)="previousPage()">
+                <span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
+            </a>
+        </li>
+        <li *ngFor="let i of generateArray(getPageCount())" [ngClass]="{'active': i === page}"><a href="#" (click)="gotoPage(i)">{{i + 1}}</a></li>
+        <li>
+            <a href="#" aria-label="Next" (click)="nextPage()">
+                <span aria-hidden="true">Next <i class="fa fa-chevron-right"></i></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav aria-label="Per Page" class="pull-right">
+    <ul class="pagination">
+        <li *ngFor="let i of perPageOptions" [ngClass]="{'active': i === perPage}"><a href="#" (click)="setPerPage(i)">{{i}}</a></li>
+    </ul>
+</nav>
+
+<table class="table table-condensed table-bordered">
+    <tr class="active">
+        <th></th>
+        <th>Profile</th>
+        <th>Follows back?</th>
+        <th colspan=5>Media</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let user of users | slice : page * perPage : (page + 1) * perPage" user-row [user]="user" [selected]="selected">
+    </tr>
+</table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous" (click)="previousPage()">
+                <span aria-hidden="true"><i class="fa fa-chevron-left"></i> Previous</span>
+            </a>
+        </li>
+        <li *ngFor="let i of generateArray(getPageCount())" [ngClass]="{'active': i === page}"><a href="#" (click)="gotoPage(i)">{{i + 1}}</a></li>
+        <li>
+            <a href="#" aria-label="Next" (click)="nextPage()">
+                <span aria-hidden="true">Next <i class="fa fa-chevron-right"></i></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<nav aria-label="Per Page" class="pull-right">
+    <ul class="pagination">
+        <li *ngFor="let i of perPageOptions" [ngClass]="{'active': i === perPage}"><a href="#" (click)="setPerPage(i)">{{i}}</a></li>
+    </ul>
+</nav>

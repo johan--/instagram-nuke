@@ -1,0 +1,31 @@
+<td class="select-user"
+    (click)="selected[user.username] = !selected[user.username]"
+    [ngClass]="{'success': selected[user.username]}"
+>
+    <span class="fa-stack fa-lg">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-check fa-stack-1x" [ngClass]="{'hidden': !selected[user.username]}"></i>
+    </span>
+</td>
+<td class="profile">
+    <a [href]="'http://www.instagram.com/' + user.username">
+        <img class="profilepic" [src]="user.picture"/>
+    </a><br/>
+    <strong>{{user.username}}</strong><br/>
+    {{user.fullName}}
+</td>
+<td>
+    <i class="fa fa-2x"
+        [ngClass]="{'fa-check text-success': user.followBack, 'fa-times text-danger': !user.followBack}"
+    ></i>
+</td>
+<td class="text-center"><user-media [media]="user.media[0]" *ngIf="user.media[0]"></user-media></td>
+<td class="text-center"><user-media [media]="user.media[1]" *ngIf="user.media[1]"></user-media></td>
+<td class="text-center"><user-media [media]="user.media[2]" *ngIf="user.media[2]"></user-media></td>
+<td class="text-center"><user-media [media]="user.media[3]" *ngIf="user.media[3]"></user-media></td>
+<td class="text-center"><user-media [media]="user.media[4]" *ngIf="user.media[4]"></user-media></td>
+<td>
+    <a class="btn btn-default"
+        [href]="'http://www.instagram.com/' + user.username"
+    >Profile</a>
+</td>

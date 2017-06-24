@@ -1,3 +1,5 @@
 node_modules
 cred.json
 cookies/*.json
+data/*.json
+log.txt
