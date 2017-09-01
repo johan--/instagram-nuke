@@ -43,3 +43,11 @@ node server
 
 ## About the project
 This is not a masterclass in UX design, software design, code efficiency or security. It's just something I felt like throwing together, and was an excuse to play around with some Angular 2. I've made it public as others may want to use it.
+
+
+## Debugging, errors, etc
+
+```
+node --max-old-space-size=4096 server
+```
+https://stackoverflow.com/questions/26094420/fatal-error-call-and-retry-last-allocation-failed-process-out-of-memory
